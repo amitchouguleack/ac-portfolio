@@ -118,17 +118,22 @@ nav a:active {
   /* Style the main title */
   font-size: 3em;
   margin-bottom: 20px;
-  color: #120232;
+  color: #1a0247;
 }
 
 .home-title h2 {
   /* Style the subtitle */
-  font-size: 1.3em;
+  font-size: 2em;
   color: #fefefe;
-  line-height: 1.9;
+  line-height: 1;
   margin-bottom: 35px;
 }
-
+.home-title h2 span {
+  /* Style the highlighted text within the subtitle */
+  font-weight: bold;
+  color: #d84315;
+  background-color: #fbe9e7;
+}
 /* ==========================================================================
  * 4. Portfolio Section Styles
  * - Style the portfolio grid and individual portfolio items.
