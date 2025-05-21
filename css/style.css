@@ -12,8 +12,8 @@ html {
 
 body {
   font-family: 'Roboto', sans-serif;
-  color: #211c9b;
-  background-color: #f6f7f8;
+  color: #1a1a2e;
+  background-color: #f2f2f2;
   background-image: url('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b');
   background-size: cover;
   background-position: center;
@@ -34,25 +34,36 @@ body {
   max-width: 1200px;
   margin: 0 auto;
   padding: 40px 20px;
-  background-color: transparent;
+  background-color: rgba(255, 255, 255, 0.85);
+  border-radius: 12px;
+  transition: background-color 0.3s ease;
+}
+
+.content-wrapper:hover {
+  background-color: rgba(255, 255, 255, 1);
 }
 
 /* Header */
 header {
-  background-color: rgba(159, 155, 167, 0.85);
+  background-color: rgba(33, 37, 41, 0.9);
   color: #fff;
   padding: 25px 20px;
   text-align: center;
   box-shadow: 0 3px 7px rgba(0, 0, 0, 0.15);
   border-radius: 8px;
   margin-bottom: 30px;
+  transition: background-color 0.3s ease;
+}
+
+header:hover {
+  background-color: rgba(33, 37, 41, 1);
 }
 
 header h1 {
   margin-bottom: 15px;
   font-size: 2.7em;
   letter-spacing: 1px;
-  color: #ffffff;
+  color: #ffc107;
 }
 
 nav ul {
@@ -64,17 +75,18 @@ nav ul {
 }
 
 nav a {
-  color: #fff;
+  color: #ffc107;
   text-decoration: none;
   padding: 12px 20px;
   border-radius: 8px;
-  background-color: rgba(255, 255, 255, 0.15);
+  background-color: rgba(255, 193, 7, 0.15);
   transition: all 0.3s ease;
 }
 
 nav a:hover,
 nav a:active {
-  background-color: rgba(255, 255, 255, 0.3);
+  background-color: rgba(255, 193, 7, 0.3);
+  color: #fff;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
@@ -82,18 +94,23 @@ nav a:active {
 .home-title {
   margin-top: 40px;
   text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.home-title:hover {
+  transform: scale(1.02);
 }
 
 .home-title h1 {
   font-size: 3em;
   margin-bottom: 20px;
-  color: #1a0247;
+  color: #1a237e;
 }
 
 .home-title h2 {
   font-size: 2em;
-  color: #fefefe;
-  line-height: 1;
+  color: #212121;
+  line-height: 1.2;
   margin-bottom: 35px;
 }
 
@@ -101,6 +118,7 @@ nav a:active {
   font-weight: bold;
   color: #d84315;
   background-color: #fbe9e7;
+  padding: 0 6px;
 }
 
 /* Portfolio (Stacked Projects) */
@@ -111,18 +129,19 @@ nav a:active {
 }
 
 .home-portfolio-piece {
-  background-color: #fff;
+  background-color: #ffffff;
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
   border-radius: 12px;
   overflow: hidden;
   max-width: 800px;
   margin: 0 auto;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
 }
 
 .home-portfolio-piece:hover {
   transform: translateY(-12px);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+  background-color: #f1f8e9;
 }
 
 .home-portfolio-piece img {
@@ -136,7 +155,12 @@ nav a:active {
   padding: 20px;
   font-size: 1.8em;
   color: #d84315;
-  background-color: #fbe9e7;
+  background-color: #fff3e0;
+  transition: background-color 0.3s ease;
+}
+
+.home-portfolio-piece:hover h4 {
+  background-color: #ffe0b2;
 }
 
 .home-portfolio-piece .project-description,
@@ -145,6 +169,12 @@ nav a:active {
   font-size: 1.1em;
   color: #333;
   background-color: #fbe9e7;
+  transition: background-color 0.3s ease;
+}
+
+.home-portfolio-piece:hover .project-description,
+.home-portfolio-piece:hover p {
+  background-color: #ffe0e0;
 }
 
 .home-portfolio-piece p span {
@@ -161,11 +191,12 @@ nav a:active {
   border-bottom-left-radius: 12px;
   border-bottom-right-radius: 12px;
   text-decoration: none;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .project-link:hover {
   background-color: #388e3c;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
 }
 
 /* Responsive */
@@ -192,5 +223,6 @@ nav a:active {
     margin: 0 10px;
   }
 }
+
 
 
