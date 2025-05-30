@@ -40,7 +40,7 @@ body {
 }
 
 .content-wrapper:hover {
-  background-color: rgba(255, 255, 255, 1);
+  background-color: rgb(177, 143, 143);
 }
 
 /* Header */
@@ -63,7 +63,7 @@ header h1 {
   margin-bottom: 15px;
   font-size: 2.7em;
   letter-spacing: 1px;
-  color: #ffc107;
+  color: #8f7628;
 }
 
 nav ul {
@@ -75,7 +75,7 @@ nav ul {
 }
 
 nav a {
-  color: #ffc107;
+  color: #937006;
   text-decoration: none;
   padding: 12px 20px;
   border-radius: 8px;
