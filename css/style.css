@@ -10,11 +10,12 @@ html {
   line-height: 1.6;
 }
 
+
+
 body {
   font-family: 'Roboto', sans-serif;
   color: #1a1a2e;
-  background-color: #f2f2f2;
-  background-image: url('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b');
+  background-color: #e0f2f7; /* A beautiful light sky blue */
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
@@ -252,7 +253,7 @@ nav a:active {
   border-radius: 50%;
   object-fit: cover;
   margin-bottom: 20px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 10px rgba(129, 21, 21, 0.2);
   transition: transform 0.3s ease;
 }
 
@@ -262,7 +263,7 @@ nav a:active {
 
 /* Let's Connect (Contact Section) */
 #contact .content-wrapper {
-  background-color: #fffde7;
+  background-color: #a9a9a2;
   border-radius: 12px;
   padding: 40px 20px;
   text-align: center;
@@ -271,7 +272,7 @@ nav a:active {
 
 #contact h3 {
   font-size: 2.5em;
-  color: #00897b;
+  color: #013631;
   margin-bottom: 25px;
 }
 
