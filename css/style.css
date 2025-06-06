@@ -1,11 +1,10 @@
-
 /* --- Color Palette Definitions (for easy reference and consistency) --- */
 :root {
   --color-accent-blue: #007bff;
   --color-accent-blue-dark: #0056b3;
   --color-charcoal-gray: #343a40;
   --color-dark-text: #333; /* Good for general dark text on light backgrounds */
-  --color-medium-text: #555;
+  --color-medium-text: #4a4a4a; /* Adjusted for better contrast (was #555) */
   --color-light-gray: #f8f8f8;
   --color-lighter-gray: #e0e0e0;
   --color-white: #ffffff;
@@ -35,7 +34,7 @@ html {
 
 body {
   font-family: 'Roboto', sans-serif;
-  color: var(--color-dark-text);
+  color: var(--color-dark-text); /* Generally uses dark text */
   background-color: var(--color-overall-background-gray);
   background-size: cover;
   background-position: center;
@@ -238,7 +237,7 @@ nav a:active {
 .home-portfolio-piece p {
   padding: 0 25px 22px;
   font-size: 1.15em;
-  color: var(--color-medium-text);
+  color: var(--color-medium-text); /* This was the main target for adjustment */
   background-color: var(--color-light-gray);
   flex-grow: 1;
   transition: background-color 0.3s ease;
@@ -421,7 +420,7 @@ footer#contact .content-wrapper {
 
 .contact-item {
   font-size: 1.15em;
-  color: var(--color-dark-text); /* Default color for items */
+  color: var(--color-dark-text); /* Changed to dark-text for better contrast on white background */
   margin-bottom: 12px;
 }
 
@@ -431,21 +430,19 @@ footer#contact .content-wrapper {
 
 /* FIX: Ensure Contrast for Phone/Email Links */
 .contact-item a {
-  color: var(--color-accent-blue); /* Retain blue for visual link indicator */
+  color: var(--color-accent-blue-dark); /* Using darker blue for better contrast on white */
   text-decoration: none;
   transition: color 0.3s ease;
-  /* Add more specific contrast consideration if needed, e.g., slightly darker blue on hover or a very light text shadow */
-  /* For example, if #007bff on #ffffff is borderline, a slightly darker blue or making the link bold by default might help. */
 }
 
 .contact-item a:hover {
-  color: var(--color-accent-blue-dark);
+  color: var(--color-accent-blue); /* Lighter blue on hover for visual feedback */
   text-decoration: underline;
 }
 
 /* Optional: If phone/email icons are separate from text links, consider hiding them for screen readers */
 /* This is primarily an HTML concern, adding aria-hidden="true" to the icon.
-   CSS can visually hide, but HTML is better for accessibility if structure is the issue. */
+     CSS can visually hide, but HTML is better for accessibility if structure is the issue. */
 .contact-item i { /* Assuming 'i' tag for icons like 📞 and ✉️ */
   margin-right: 8px; /* Space between icon and text */
 }
