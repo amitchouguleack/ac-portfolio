@@ -4,13 +4,14 @@
   --color-accent-blue: #007bff;
   --color-accent-blue-dark: #0056b3;
   --color-charcoal-gray: #343a40;
-  --color-dark-text: #333;
+  --color-dark-text: #333; /* Good for general dark text on light backgrounds */
   --color-medium-text: #555;
   --color-light-gray: #f8f8f8;
   --color-lighter-gray: #e0e0e0;
   --color-white: #ffffff;
   --color-black: #000;
-  --color-overall-background-gray: #e8e8e8; /* Overall background gray */
+  --color-overall-background-gray: #e8e8e8;
+  --color-button-text-light: #f0f0f0; /* A lighter white for better contrast on dark buttons */
 }
 
 /* Reset & Base Styles */
@@ -22,7 +23,7 @@
 
 html {
   font-size: 1em;
-  line-height: 1.65; /* Slightly increased for better readability */
+  line-height: 1.65;
 }
 
 /* Smooth Scroll for Navigation */
@@ -34,8 +35,8 @@ html {
 
 body {
   font-family: 'Roboto', sans-serif;
-  color: var(--color-dark-text); /* Dark gray for primary text */
-  background-color: var(--color-overall-background-gray); /* Overall gray background */
+  color: var(--color-dark-text);
+  background-color: var(--color-overall-background-gray);
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
@@ -48,7 +49,7 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
+  background-color: rgba(0, 0, 0, 0.5);
   z-index: -1;
 }
 
@@ -56,7 +57,7 @@ body {
 .content-wrapper {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 40px 25px; /* Slightly more padding */
+  padding: 40px 25px;
   border-radius: 12px;
   transition: background-color 0.3s ease;
 }
@@ -65,234 +66,244 @@ body {
 #work .content-wrapper,
 #skills .content-wrapper,
 #about .content-wrapper {
-  background-color: var(--color-white); /* White background for these specific content areas */
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1); /* Stronger shadow for "pop" */
+  background-color: var(--color-white);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
 }
 
 /* --- Header Styling --- */
 header {
-  background-color: var(--color-charcoal-gray); /* Charcoal gray header background */
-  color: var(--color-white); /* White text for header elements */
-  padding: 30px 25px; /* More padding for impact */
+  background-color: var(--color-charcoal-gray);
+  color: var(--color-white);
+  padding: 30px 25px;
   text-align: center;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* More prominent shadow */
-  border-radius: 10px; /* Slightly larger border-radius */
-  margin-bottom: 40px; /* More space below header */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  margin-bottom: 40px;
   transition: background-color 0.3s ease;
 }
 
 header:hover {
-  background-color: var(--color-black); /* Black on hover for strong contrast */
+  background-color: var(--color-black);
 }
 
 /* Ensure the h1 directly inside the header's content-wrapper is visible */
-header .content-wrapper h1 { /* Targeting the "My Portfolio" h1 */
+header .content-wrapper h1 {
   margin-bottom: 18px;
-  font-size: 3em; /* Larger heading */
-  letter-spacing: 1.5px; /* Increased letter spacing for sophistication */
-  color: var(--color-white); /* White heading for "My Portfolio" */
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3); /* Subtle text shadow */
+  font-size: 3em;
+  letter-spacing: 1.5px;
+  color: var(--color-white);
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
 }
 
 /* Navigation Menu */
 nav ul {
   display: flex;
   list-style-type: none;
-  justify-content: center; /* Center navigation items */
-  gap: 30px; /* More space between navigation links */
-  flex-wrap: wrap; /* Allow navigation items to wrap on smaller screens */
-  margin-bottom: 25px; /* Add space below nav to separate from home-title */
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+  margin-bottom: 25px;
 }
 
 nav a {
-  color: var(--color-white); /* White link text */
+  color: var(--color-white);
   text-decoration: none;
-  padding: 14px 22px; /* Larger padding for better click area */
-  border-radius: 10px; /* Larger border-radius */
-  background-color: rgba(255, 255, 255, 0.15); /* Semi-transparent white for link background */
-  font-weight: 500; /* Slightly bolder font */
+  padding: 14px 22px;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.15);
+  font-weight: 500;
   transition: all 0.3s ease;
 }
 
 nav a:hover,
 nav a:active {
-  background-color: var(--color-accent-blue); /* Accent color on hover for navigation links */
-  color: var(--color-white); /* White text on accent background */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* More prominent shadow on hover */
-  transform: translateY(-2px); /* Slight lift on hover */
+  background-color: var(--color-accent-blue);
+  color: var(--color-white);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transform: translateY(-2px);
 }
 
 /* --- Home Section Title (Now part of the Header's content-wrapper) --- */
-/* These styles apply to the content inside header > .content-wrapper > .home-title */
 .home-title {
-  margin-top: 50px; /* More space above title */
+  margin-top: 50px;
   text-align: center;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .home-title:hover {
-  transform: scale(1.02); /* Slight scale effect on hover */
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1); /* Subtle shadow on hover */
+  transform: scale(1.02);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
 }
 
 .home-title h1 {
-  font-size: 3.8em; /* Significantly larger main heading for impact */
+  font-size: 3.8em;
   margin-bottom: 25px;
-  color: var(--color-white); /* Changed to white to be visible on charcoal background */
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1); /* Soft text shadow */
+  color: var(--color-white);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .home-title h2 {
-  font-size: 2.5em; /* Larger subheading */
-  color: var(--color-white); /* Changed to white to be visible on charcoal background */
+  font-size: 2.5em;
+  color: var(--color-white);
   line-height: 1.3;
-  margin-bottom: 45px; /* More space below subheading */
+  margin-bottom: 45px;
 }
 
 .home-title h2 span {
-  font-weight: 700; /* Bolder for key terms */
-  color: var(--color-white); /* White text for emphasis */
-  background-color: var(--color-accent-blue); /* Accent color background for emphasis */
-  padding: 2px 8px; /* More padding for a bolder look */
+  font-weight: 700;
+  color: var(--color-white);
+  background-color: var(--color-accent-blue);
+  padding: 2px 8px;
   border-radius: 4px;
 }
 
 /* Styles for the "Hire me" button */
 .hire-me-button {
-  display: inline-block; /* Essential for padding and width adjustments */
-  background-color: var(--color-black); /* Black background for the button */
-  color: var(--color-white); /* White text for contrast */
-  text-decoration: none; /* Remove underline */
-  padding: 15px 30px; /* Generous padding for a clickable area */
-  border-radius: 8px; /* Slightly rounded corners */
-  font-size: 1.2em; /* Good size for a call to action */
-  font-weight: 600; /* Bolder text */
-  margin-top: 30px; /* Space above the button */
+  display: inline-block;
+  background-color: var(--color-black);
+  color: var(--color-white);
+  text-decoration: none;
+  padding: 15px 30px;
+  border-radius: 8px;
+  font-size: 1.2em;
+  font-weight: 600;
+  margin-top: 30px;
   letter-spacing: 0.5px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
   transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .hire-me-button:hover {
-  background-color: var(--color-charcoal-gray); /* Darker gray on hover */
-  transform: translateY(-3px); /* Lift effect on hover */
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3); /* More pronounced shadow on hover */
+  background-color: var(--color-charcoal-gray);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
 }
 
 
 /* --- Portfolio Section (Horizontal Projects) --- */
 .portfolio-wrapper {
   display: flex;
-  flex-direction: row; /* Projects display side-by-side */
-  flex-wrap: wrap; /* Allows projects to wrap to the next line */
-  gap: 35px; /* Increased spacing between project cards */
-  justify-content: center; /* Centers project cards horizontally */
-  align-items: stretch; /* Ensures cards in the same row have equal height */
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 35px;
+  justify-content: center;
+  align-items: stretch;
 }
 
 .home-portfolio-piece {
-  background-color: var(--color-white); /* White background for project cards */
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1); /* Stronger initial shadow */
+  background-color: var(--color-white);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
   border-radius: 12px;
   overflow: hidden;
-  max-width: 400px; /* Set max-width for individual project cards */
-  width: 100%; /* Ensures it takes full width within max-width */
-  margin: 0; /* Flexbox handles spacing, remove auto margin */
-  display: flex; /* Make portfolio piece a flex container itself */
-  flex-direction: column; /* Content inside project piece stacks vertically */
+  max-width: 400px;
+  width: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
   transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
 }
 
 .home-portfolio-piece:hover {
-  transform: translateY(-15px); /* More pronounced lift effect on hover */
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3); /* Much stronger shadow on hover for "pop" */
-  background-color: var(--color-light-gray); /* Subtle background change on hover */
+  transform: translateY(-15px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+  background-color: var(--color-light-gray);
 }
 
 .home-portfolio-piece img {
   width: 100%;
-  height: 250px; /* Fixed height for consistent image size */
+  height: 250px;
   border-top-left-radius: 12px;
   border-top-right-radius: 12px;
-  object-fit: cover; /* Crop and cover the area if image is larger than container */
+  object-fit: cover;
   transition: transform 0.3s ease;
 }
 
 .home-portfolio-piece:hover img {
-  transform: scale(1.05); /* Slight zoom on image on hover */
+  transform: scale(1.05);
 }
 
 .home-portfolio-piece h4 {
-  padding: 22px; /* More padding */
-  font-size: 2em; /* Larger heading */
-  color: var(--color-dark-text); /* Dark gray heading */
-  background-color: var(--color-lighter-gray); /* Light gray for heading background */
+  padding: 22px;
+  font-size: 2em;
+  color: var(--color-dark-text);
+  background-color: var(--color-lighter-gray);
   transition: background-color 0.3s ease;
 }
 
 .home-portfolio-piece:hover h4 {
-  background-color: var(--color-lighter-gray); /* Subtle darker shade on hover */
+  background-color: var(--color-lighter-gray);
 }
 
 .home-portfolio-piece .project-description,
 .home-portfolio-piece p {
-  padding: 0 25px 22px; /* More padding */
-  font-size: 1.15em; /* Slightly larger text */
-  color: var(--color-medium-text); /* Medium gray text */
-  background-color: var(--color-light-gray); /* Light gray background for description */
-  flex-grow: 1; /* Allows description/paragraph to take up available space */
+  padding: 0 25px 22px;
+  font-size: 1.15em;
+  color: var(--color-medium-text);
+  background-color: var(--color-light-gray);
+  flex-grow: 1;
   transition: background-color 0.3s ease;
 }
 
 .home-portfolio-piece:hover .project-description,
 .home-portfolio-piece:hover p {
-  background-color: var(--color-lighter-gray); /* Subtle darker shade on hover */
+  background-color: var(--color-lighter-gray);
 }
 
 .home-portfolio-piece p span {
   font-weight: bold;
-  color: var(--color-dark-text); /* Dark gray for emphasis */
+  color: var(--color-dark-text);
 }
 
+/* FIX: Project Live Link Contrast & Redundancy */
 .project-link {
-  display: block; /* Make the link a block element */
-  padding: 20px 25px; /* Larger padding for a more substantial button */
-  text-align: center;
-  background-color: var(--color-accent-blue); /* Accent color for the project link button */
-  color: var(--color-white); /* White text */
+  display: flex; /* Changed to flexbox */
+  align-items: center; /* Vertically center icon and text */
+  justify-content: center; /* Horizontally center content */
+  padding: 20px 25px;
+  text-align: center; /* Still useful for single line of text fallback */
+  background-color: var(--color-accent-blue);
+  color: var(--color-button-text-light); /* Changed text color for better contrast on blue button */
   border-bottom-left-radius: 12px;
   border-bottom-right-radius: 12px;
   text-decoration: none;
-  font-weight: 600; /* Bolder button text */
+  font-weight: 600;
   letter-spacing: 0.5px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
   transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
-  margin-top: auto; /* Pushes the link to the bottom of the flex container */
+  margin-top: auto;
 }
 
 .project-link:hover {
-  background-color: var(--color-accent-blue-dark); /* Darker accent color on hover */
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); /* Stronger shadow on hover */
-  transform: translateY(-2px); /* Slight lift on hover */
+  background-color: var(--color-accent-blue-dark);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  transform: translateY(-2px);
 }
+
+/* If you have an icon inside project-link (e.g., <i class="fa fa-external-link"></i>) */
+.project-link i {
+  margin-right: 8px; /* Space between icon and text */
+  font-size: 1.1em; /* Adjust icon size if needed */
+}
+
 
 /* --- Skills Section --- */
 #skills .content-wrapper {
-  padding: 45px 25px; /* More padding */
+  padding: 45px 25px;
   border-radius: 12px;
   margin-bottom: 40px;
   text-align: center;
 }
 
 .skills-header {
-  font-size: 2.8em; /* Larger heading */
-  color: var(--color-black); /* Black heading for impact */
+  font-size: 2.8em;
+  color: var(--color-black);
   margin-bottom: 35px;
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
 }
 
 #skills h4 {
-  font-size: 1.8em; /* Larger subheading */
-  color: var(--color-dark-text); /* Dark gray subheading */
+  font-size: 1.8em;
+  color: var(--color-dark-text);
   margin-top: 35px;
   margin-bottom: 25px;
 }
@@ -301,163 +312,172 @@ nav a:active {
 .tools-wrapper {
   display: flex;
   flex-wrap: wrap;
-  gap: 20px; /* More space between skill/tool tags */
+  gap: 20px;
   justify-content: center;
 }
 
 .skill,
 .tool {
-  padding: 14px 22px; /* Larger padding for tags */
-  background-color: var(--color-charcoal-gray); /* Charcoal gray skill/tool tags */
+  padding: 14px 22px;
+  background-color: var(--color-charcoal-gray);
   border-radius: 8px;
-  color: var(--color-white); /* White text */
-  font-size: 1.1em; /* Slightly larger font */
+  color: var(--color-white);
+  font-size: 1.1em;
   font-weight: 500;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow on tags */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   transition: transform 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
 }
 
 .skill:hover,
 .tool:hover {
-  transform: scale(1.07); /* More pronounced scale effect on hover */
-  background-color: var(--color-accent-blue); /* Accent color on hover for skill tags */
-  color: var(--color-white); /* White text on accent background */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Stronger shadow on hover */
+  transform: scale(1.07);
+  background-color: var(--color-accent-blue);
+  color: var(--color-white);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 /* --- About/Profile Section --- */
 #about .profile-content {
   display: flex;
-  flex-direction: column; /* Default to column for mobile-first approach */
-  align-items: center; /* Center items horizontally when stacked */
-  gap: 20px; /* Space between image and text */
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
 }
 
 #about img {
-  width: 280px; /* Increased image size */
-  height: 280px; /* Increased image size */
-  border-radius: 50%; /* Circular image */
+  width: 280px;
+  height: 280px;
+  border-radius: 50%;
   object-fit: cover;
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); /* More prominent shadow */
-  border: 4px solid var(--color-accent-blue); /* Accent color border around image */
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+  border: 4px solid var(--color-accent-blue);
   transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
 }
 
 #about img:hover {
-  transform: scale(1.08); /* More pronounced scale effect */
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3); /* Stronger shadow on hover */
-  border-color: var(--color-accent-blue-dark); /* Darker accent color on hover */
+  transform: scale(1.08);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+  border-color: var(--color-accent-blue-dark);
 }
 
 #about .profile-text {
-  text-align: center; /* Center text for mobile */
+  text-align: center;
 }
 
 /* --- Let's Connect (Contact Section) --- */
 footer#contact .content-wrapper {
-  background-color: var(--color-charcoal-gray); /* Dark background */
+  background-color: var(--color-charcoal-gray);
   border-radius: 12px;
-  padding: 50px 25px; /* Increased padding for more space */
+  padding: 50px 25px;
   text-align: center;
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
-  color: var(--color-white); /* Default text color for this section */
-  margin-bottom: 40px; /* Add some space below the footer */
+  color: var(--color-white);
+  margin-bottom: 40px;
 }
 
 #contact h3 {
-  font-size: 3em; /* Larger, more impactful heading */
+  font-size: 3em;
   color: var(--color-white);
-  margin-bottom: 40px; /* More space below main heading */
-  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2); /* Slightly stronger shadow */
-  letter-spacing: 1px; /* A bit more breathing room */
+  margin-bottom: 40px;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+  letter-spacing: 1px;
 }
 
 /* Grouping contact details (Get in Touch, Follow Me) */
 .contact-details-group {
   display: flex;
-  flex-wrap: wrap; /* Allow wrapping on smaller screens */
+  flex-wrap: wrap;
   justify-content: center;
-  gap: 40px; /* Increased gap between the two main blocks */
-  margin-bottom: 40px; /* Space above copyright */
+  gap: 40px;
+  margin-bottom: 40px;
 }
 
 /* Styling for individual contact info blocks */
 .contact-info-block,
 .social-block {
-  background-color: var(--color-white); /* White background for these blocks */
-  border-radius: 12px; /* Consistent rounded corners */
-  padding: 30px; /* Generous padding inside */
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15); /* Stronger shadow for "pop" */
+  background-color: var(--color-white);
+  border-radius: 12px;
+  padding: 30px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  color: var(--color-dark-text); /* Dark text inside white cards */
-  flex: 1; /* Allow blocks to grow */
-  max-width: 450px; /* Limit max width for larger screens */
-  text-align: center; /* Center content within the blocks */
+  color: var(--color-dark-text);
+  flex: 1;
+  max-width: 450px;
+  text-align: center;
 }
 
 .contact-info-block:hover,
 .social-block:hover {
-  transform: translateY(-10px); /* More pronounced lift */
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3); /* Even stronger shadow on hover */
+  transform: translateY(-10px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
 }
 
-.contact-heading { /* Used for "Get in Touch" and "Follow Me" */
-  font-size: 1.8em; /* Clear and prominent heading */
-  color: var(--color-dark-text); /* Changed to dark text color to match theme */
-  margin-bottom: 25px; /* Space below heading */
-  font-weight: 700; /* Bolder */
+.contact-heading {
+  font-size: 1.8em;
+  color: var(--color-dark-text); /* Ensured this matches your preference for dark text */
+  margin-bottom: 25px;
+  font-weight: 700;
 }
 
-.contact-item { /* For phone, email, location text */
-  font-size: 1.15em; /* Readable text size */
-  color: var(--color-dark-text);
-  margin-bottom: 12px; /* Space between items */
+.contact-item {
+  font-size: 1.15em;
+  color: var(--color-dark-text); /* Default color for items */
+  margin-bottom: 12px;
 }
 
 .contact-item:last-child {
-  margin-bottom: 0; /* No margin below the last item */
+  margin-bottom: 0;
 }
 
-/* Styling for clickable phone and email links within contact-item */
+/* FIX: Ensure Contrast for Phone/Email Links */
 .contact-item a {
-  color: var(--color-accent-blue); /* Accent color for links */
-  text-decoration: none; /* Remove default underline */
+  color: var(--color-accent-blue); /* Retain blue for visual link indicator */
+  text-decoration: none;
   transition: color 0.3s ease;
+  /* Add more specific contrast consideration if needed, e.g., slightly darker blue on hover or a very light text shadow */
+  /* For example, if #007bff on #ffffff is borderline, a slightly darker blue or making the link bold by default might help. */
 }
 
 .contact-item a:hover {
-  color: var(--color-accent-blue-dark); /* Darker on hover */
-  text-decoration: underline; /* Add underline on hover for clear clickable feedback */
+  color: var(--color-accent-blue-dark);
+  text-decoration: underline;
+}
+
+/* Optional: If phone/email icons are separate from text links, consider hiding them for screen readers */
+/* This is primarily an HTML concern, adding aria-hidden="true" to the icon.
+   CSS can visually hide, but HTML is better for accessibility if structure is the issue. */
+.contact-item i { /* Assuming 'i' tag for icons like 📞 and ✉️ */
+  margin-right: 8px; /* Space between icon and text */
 }
 
 
 .social-icons {
   display: flex;
   justify-content: center;
-  gap: 25px; /* More space between social icons */
-  list-style: none; /* Remove bullet points */
-  padding: 0; /* Remove default padding */
-  margin-top: 25px; /* Space below social heading */
+  gap: 25px;
+  list-style: none;
+  padding: 0;
+  margin-top: 25px;
 }
 
 .social-icons li {
-  margin: 0; /* Remove default list item margin */
+  margin: 0;
 }
 
 .social-icons a {
-  color: var(--color-charcoal-gray); /* Dark icons on white background */
-  font-size: 3em; /* Significantly larger icons */
+  color: var(--color-charcoal-gray);
+  font-size: 3em;
   transition: color 0.3s ease, transform 0.3s ease;
 }
 
 .social-icons a:hover {
-  color: var(--color-accent-blue); /* Accent color on hover */
-  transform: scale(1.2); /* More pronounced lift on hover */
+  color: var(--color-accent-blue);
+  transform: scale(1.2);
 }
 
 .copyright-text {
-  margin-top: 30px; /* More space above copyright */
-  font-size: 1em; /* Slightly larger copyright text */
+  margin-top: 30px;
+  font-size: 1em;
   color: var(--color-light-gray);
 }
 
@@ -466,13 +486,13 @@ footer#contact .content-wrapper {
 /* For screens 992px and wider */
 @media (min-width: 992px) {
   .home-title h1 {
-    font-size: 3.8em; /* Restore larger size for wider desktops */
+    font-size: 3.8em;
   }
   .home-title h2 {
-    font-size: 2.5em; /* Restore larger size for wider desktops */
+    font-size: 2.5em;
   }
   .home-portfolio-piece {
-    max-width: 400px; /* Restore original max width for wider desktops */
+    max-width: 400px;
   }
 }
 
@@ -480,34 +500,33 @@ footer#contact .content-wrapper {
 @media (min-width: 768px) {
   /* About Section Specific Layout */
   #about .profile-content {
-    flex-direction: row; /* Arrange items in a row */
-    text-align: left; /* Align text to the left */
-    align-items: flex-start; /* Align items to the top (cross axis) */
-    justify-content: center; /* Center the content block horizontally */
+    flex-direction: row;
+    text-align: left;
+    align-items: flex-start;
+    justify-content: center;
   }
 
   #about img {
-    width: 280px; /* Consistent larger size for desktop */
-    height: 280px; /* Consistent larger size for desktop */
-    margin-right: 40px; /* Add space between image and text */
-    margin-bottom: 0; /* Remove potential bottom margin from mobile styles */
+    width: 280px;
+    height: 280px;
+    margin-right: 40px;
+    margin-bottom: 0;
   }
 
   #about .profile-text {
-    text-align: left; /* Align text to the left */
-    flex-grow: 1; /* Allow the text block to grow and take available space */
+    text-align: left;
+    flex-grow: 1;
   }
 
   /* Other adjustments for 768px and up */
   .home-title h1 {
-    font-size: 3.2em; /* Adjusted for smaller desktop/larger tablet screens */
+    font-size: 3.2em;
   }
   .home-title h2 {
-    font-size: 2em; /* Adjusted for smaller desktop/larger tablet screens */
+    font-size: 2em;
   }
   .portfolio-wrapper {
-    /* For 3 columns: (100% - 2*gap) / 3 */
-    gap: 3%; /* Adjust gap as needed, percentage provides flexibility */
+    gap: 3%;
   }
   .home-portfolio-piece {
     max-width: 31%; /* Allows three items per row (approx. 33.33% - gap) */
@@ -538,9 +557,9 @@ footer#contact .content-wrapper {
 
   /* Responsive adjustments for new footer structure on 768px+ */
   .contact-details-group {
-    flex-direction: row; /* Ensure side-by-side for desktop */
+    flex-direction: row;
     justify-content: center;
-    align-items: stretch; /* Make blocks same height */
+    align-items: stretch;
   }
 }
 
@@ -565,17 +584,16 @@ footer#contact .content-wrapper {
   .home-title h2 {
     font-size: 1.8em;
   }
-  /* On smaller screens, portfolio projects will stack */
   .portfolio-wrapper {
-    flex-direction: column; /* Stack projects vertically */
-    align-items: center; /* Center stacked projects */
+    flex-direction: column;
+    align-items: center;
   }
   .home-portfolio-piece {
-    max-width: 90%; /* Adjust width for stacked cards */
-    margin: 0 auto; /* Center individual stacked cards */
+    max-width: 90%;
+    margin: 0 auto;
   }
   .home-portfolio-piece img {
-    height: 200px; /* Adjust image height for smaller screens */
+    height: 200px;
   }
   .skills-header, #contact h3 {
     font-size: 2.2em;
@@ -587,10 +605,10 @@ footer#contact .content-wrapper {
     padding: 12px 18px;
     font-size: 1em;
   }
-  #about img { /* Image styling for smaller screens */
-    width: 240px; /* Increased size for tablets/larger phones */
-    height: 240px; /* Increased size for tablets/larger phones */
-    margin-bottom: 25px; /* Keep margin bottom for stacked layout */
+  #about img {
+    width: 240px;
+    height: 240px;
+    margin-bottom: 25px;
   }
 
   /* Responsive adjustments for new footer structure on 767px and smaller */
@@ -599,15 +617,15 @@ footer#contact .content-wrapper {
     margin-bottom: 30px;
   }
   .contact-details-group {
-    flex-direction: column; /* Stack blocks vertically on smaller screens */
-    align-items: center; /* Center stacked blocks */
-    gap: 30px; /* Reduce gap when stacked */
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
   }
   .contact-info-block,
   .social-block {
-    max-width: 90%; /* Wider blocks on smaller screens */
-    width: 100%; /* Ensure they take available width */
-    padding: 25px; /* Slightly less padding */
+    max-width: 90%;
+    width: 100%;
+    padding: 25px;
   }
   .contact-heading {
     font-size: 1.5em;
@@ -657,8 +675,8 @@ footer#contact .content-wrapper {
     margin-bottom: 25px;
   }
   .home-portfolio-piece {
-    margin: 0 10px; /* Add some side margin for very small screens */
-    max-width: 95%; /* Even wider for very small screens */
+    margin: 0 10px;
+    max-width: 95%;
   }
   .home-portfolio-piece img {
     height: 180px;
@@ -687,9 +705,9 @@ footer#contact .content-wrapper {
     font-size: 0.9em;
     gap: 10px;
   }
-  #about img { /* Image styling for very small screens */
-    width: 180px; /* Slightly larger for very small phones */
-    height: 180px; /* Slightly larger for very small phones */
+  #about img {
+    width: 180px;
+    height: 180px;
   }
 
   /* Responsive adjustments for new footer structure on 480px and smaller */
